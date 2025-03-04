@@ -4,7 +4,7 @@ import axios from "axios";
 import "./MovieList.css";
 
 const fetchMovies = async (search) => {
-  const API_URL = `https://www.omdbapi.com/?s=${search}&apikey=64c5f078`; // Replace with your API key
+  const API_URL = `https://www.omdbapi.com/?s=${search}&apikey=64c5f078`; 
   const { data } = await axios.get(API_URL);
   return data.Search || [];
 };
@@ -42,13 +42,17 @@ const MovieList = () => {
       {error && <p className="error">Error fetching movies.</p>}
       {data?.Error && <p className="error">Error: {data.Error}</p>}
 
-      <ul className="movie-list">
+      <div className="movie-grid">
         {data?.map((movie) => (
-          <li key={movie.imdbID}>
-            <strong>{movie.Title}</strong> ({movie.Year})
-          </li>
+          <div key={movie.imdbID} className="movie-card">
+            <img src={movie.Poster} alt={movie.Title} className="movie-poster" />
+            <div className="movie-info">
+              <strong>{movie.Title}</strong>
+              <p>{movie.Year}</p>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

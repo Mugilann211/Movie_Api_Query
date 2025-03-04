@@ -1,4 +1,3 @@
-/* General Styling */
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
@@ -10,9 +9,8 @@ body {
   height: 100vh;
 }
 
-/* Container */
 .movie-container {
-  width: 400px;
+  width: 900px;
   background: white;
   padding: 20px;
   border-radius: 10px;
@@ -20,14 +18,12 @@ body {
   text-align: center;
 }
 
-/* Heading */
 .movie-container h2 {
   font-size: 22px;
   color: #333;
   margin-bottom: 20px;
 }
 
-/* Input and Button */
 .search-box {
   display: flex;
   gap: 10px;
@@ -56,7 +52,6 @@ body {
   background: #0056b3;
 }
 
-/* Movie List */
 .movie-list {
   list-style: none;
   padding: 0;
@@ -74,9 +69,44 @@ body {
   color: #333;
 }
 
-/* Loading & Error Messages */
 .loading,
 .error {
   color: red;
   font-weight: bold;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 5px;
+}
+
+.movie-card {
+  background: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.movie-poster {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.movie-info {
+  margin-top: 5px;
+}
+
+.movie-info strong {
+  display: block;
+  color: #333;
+  font-size: 16px;
+}
+
+.movie-info p {
+  color: #666;
+  font-size: 14px;
 }
